@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-set -euo pipefall
+set -euo pipefail
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-BUILD_DIR="${PROJECT_ROOT}/build"
+BUILD_DIR="${PROJECT_ROOT}/build_cross"
 TOOLCHAIN_FILE="${PROJECT_ROOT}/cmake/toolchain-arm-rockchip830-uclibcgnueabihf.cmake"
 
 BUILD_TYPE="Release"
