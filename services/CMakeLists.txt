@@ -1,0 +1,4 @@
+add_subdirectory(manager_service)
+add_subdirectory(camera_service)
+add_subdirectory(encoder_service)
+add_subdirectory(streaming_service)
