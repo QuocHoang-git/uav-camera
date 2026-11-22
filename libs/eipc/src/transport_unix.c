@@ -10,7 +10,7 @@
 #include <sys/un.h>
 
 int eipc_unix_socket_create(void) {
-    int fd = socket(AF_UNIX, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, 0);
+    int fd = socket(AF_UNIX, SOCK_SEQPACKET | SOCK_NONBLOCK | SOCK_CLOEXEC, 0);
     if (fd < 0) {
         perror("[EIPC Transport] socket() failed");
         return -1;
@@ -107,7 +107,7 @@ eipc_status_t eipc_unix_socket_pair(int sv[2]) {
     if (sv == NULL) {
         return EIPC_ERR_INVAL;
     }
-    if (socketpair(AF_UNIX, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, 0, sv) != 0) {
+    if (socketpair(AF_UNIX, SOCK_SEQPACKET | SOCK_NONBLOCK | SOCK_CLOEXEC, 0, sv) != 0) {
         perror("[EIPC Transport] socketpair() failed");
         return EIPC_ERR_IO;
     }

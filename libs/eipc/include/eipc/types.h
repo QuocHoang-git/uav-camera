@@ -58,10 +58,10 @@ enum {
 typedef uint8_t eipc_frame_type_t;
 
 typedef struct {
-    uint8_t* data;
-    uint32_t size;
-    int *fds;
-    int num_fds;
+    uint8_t             *data;
+    uint32_t            size;
+    int                 *fds;
+    int                 num_fds;
 
     eipc_frame_type_t   type;
 } eipc_message_t;
