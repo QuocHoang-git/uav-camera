@@ -36,6 +36,7 @@ const char* proto_service_name(proto_service_id_t svc_id) {
         case PROTO_SVC_TELEMETRY:     return "Telemetry";
         case PROTO_SVC_AI:            return "AI_Inference";
         case PROTO_SVC_STORAGE:       return "Storage";
+        case PROTO_SVC_ENCODER:       return "Encoder";
         case PROTO_SVC_BROADCAST:     return "Broadcast";
         case PROTO_SVC_UNKNOWN:
         default:                      return "UnknownService";

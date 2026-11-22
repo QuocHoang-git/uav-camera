@@ -38,6 +38,7 @@ typedef enum {
     PROTO_SVC_TELEMETRY     = 0x05, /**< MAVLink telemetry bridge & vehicle metrics */
     PROTO_SVC_AI            = 0x06, /**< NPU inference & computer vision service */
     PROTO_SVC_STORAGE       = 0x07, /**< Media recording & file management */
+    PROTO_SVC_ENCODER       = 0x08, /**< Hardware VPU video encoder service */
     
     PROTO_SVC_BROADCAST     = 0xFF  /**< Broadcast destination to all subscribers */
 } proto_service_id_t;
