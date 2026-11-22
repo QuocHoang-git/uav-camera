@@ -19,6 +19,9 @@ set(RGA_ROOT "${LUCKFOX_SDK_PATH}/media/rga/release_rga_rv1106_arm-rockchip830-l
 set(MPP_ROOT "${LUCKFOX_SDK_PATH}/media/mpp/release_mpp_rv1106_arm-rockchip830-linux-uclibcgnueabihf")
 set(RKNN_LIB_DIR "${LUCKFOX_SDK_PATH}/media/out/lib")
 
+# Enable Rockchip MPP hardware flag
+set(HAVE_ROCKCHIP_MPP ON CACHE BOOL "Enable Rockchip MPP Hardware Acceleration" FORCE)
+
 # Cross-compilers
 set(CMAKE_C_COMPILER "${TOOLCHAIN_BIN}/arm-rockchip830-linux-uclibcgnueabihf-gcc")
 set(CMAKE_CXX_COMPILER "${TOOLCHAIN_BIN}/arm-rockchip830-linux-uclibcgnueabihf-g++")
@@ -30,8 +33,8 @@ set(CMAKE_SYSROOT "${TOOLCHAIN_SYSROOT}")
 # Hardware floating point flags for ARM Cortex-A7 (VFPv4-D16 / NEON)
 set(ARM_ARCH_FLAGS "-mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard")
 
-set(CMAKE_C_FLAGS_INIT "${ARM_ARCH_FLAGS}")
-set(CMAKE_CXX_FLAGS_INIT "${ARM_ARCH_FLAGS}")
+set(CMAKE_C_FLAGS_INIT "${ARM_ARCH_FLAGS} -DHAVE_ROCKCHIP_MPP=1")
+set(CMAKE_CXX_FLAGS_INIT "${ARM_ARCH_FLAGS} -DHAVE_ROCKCHIP_MPP=1")
 
 # Search mode settings: search programs only in host, libraries/headers in target sysroot
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
