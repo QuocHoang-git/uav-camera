@@ -9,6 +9,13 @@ A microservice-based embedded Linux vision payload developed for the [**Custom U
 
 ---
 
+## 🎥 Demo
+<p align="center">
+  <img src="docs/assets/demo.gif" alt="Dual-Stream H.264 & Real-Time Face Detection Demo" width="50%">
+</p>
+
+---
+
 ## 1. System Architecture
 
 ```mermaid
